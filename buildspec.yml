@@ -1,0 +1,25 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  pre_build:
+    commands:
+      - echo Setting up AWS credentials
+      - mkdir -p ~/.aws
+      - echo "[default]" > ~/.aws/credentials
+      - echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/credentials
+      - echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
+      - echo "region=$AWS_REGION" >> ~/.aws/credentials
+      - pip install -r requirements.txt
+  build:
+    commands:
+      - echo Build started on `date`
+artifacts:
+  files:
+    - app.py
+    - requirements.txt
+    - Procfile
+    - .streamlit/**/*
+    - buildspec.yml
+    - amplify.yml
