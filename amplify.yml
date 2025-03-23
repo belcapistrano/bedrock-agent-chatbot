@@ -8,7 +8,6 @@ frontend:
     build:
       commands:
         - echo "Building Bedrock Agent Chatbot"
-  artifacts:
     baseDirectory: /
     files:
       - '**/*'

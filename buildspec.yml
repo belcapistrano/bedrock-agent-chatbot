@@ -8,9 +8,9 @@ phases:
       - echo Setting up AWS credentials
       - mkdir -p ~/.aws
       - echo "[default]" > ~/.aws/credentials
-      - echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/credentials
-      - echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
-      - echo "region=$AWS_REGION" >> ~/.aws/credentials
+      - echo "aws_access_key_id=$CUSTOM_AWS_ACCESS_KEY_ID" >> ~/.aws/credentials
+      - echo "aws_secret_access_key=$CUSTOM_AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
+      - echo "region=$CUSTOM_AWS_REGION" >> ~/.aws/credentials  artifacts:
       - pip install -r requirements.txt
   build:
     commands:
